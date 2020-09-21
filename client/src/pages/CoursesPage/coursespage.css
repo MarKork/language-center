@@ -1,0 +1,21 @@
+#card-img{
+    width: 100%;
+    height: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: auto;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+#one_course{
+    display: flex;
+}
+
+#course_info{
+    padding: 1em;
+}
+
