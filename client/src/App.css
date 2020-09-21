@@ -188,9 +188,8 @@ a{
         padding-top: 0.5em;
         padding-right: 0.5em;
     }
-    .col-1{
-        max-width: 1%;
-        padding: 0px;
+    #first{
+        padding-right: 0px;
     }
     .col-2{
         max-width: 20%;

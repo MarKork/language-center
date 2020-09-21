@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Alert, Button, Card, CardImg, CardText, CardBody, 
-    CardTitle, CardDeck, Col, Row} from 'reactstrap'
+    CardTitle, CardDeck, CardFooter, Col, Row} from 'reactstrap'
 import { useLocation, Link } from 'react-router-dom';
 import api from '../../services/api'
 import moment from 'moment'
@@ -115,31 +115,31 @@ const CoursesPage = ({history}) => {
             <>
                 <h2>Our {languageName} courses</h2>
                 {error ? (
-                    <Alert color="danger" className="event-validation">{messageHandler}</Alert>
+                    <Alert color="danger" className="event-validation position-fixed sticky-center">{messageHandler}</Alert>
                 ) : ''}
                 {success ? (
-                    <Alert color="success" className="event-validation"> {messageHandler} </Alert>
+                    <Alert color="success" className="event-validation position-fixed sticky-center"> {messageHandler} </Alert>
                 ) : ''}
 
                 <Row>
-                <CardDeck>
-                {courses.map(course => 
-                    <Col sm="4" key={course._id}>
-                        <Card className="card" onClick={()=> {courseSelectionHandler(course)}}>
-                            <Link to={`/courses/${course.id}`}> 
-                                <CardImg top width="100%" id="card-img" src={course.thumbnail_url} alt="Card image cap" />
-                            </Link>
-                            <CardBody>
-                                <CardTitle><strong>{course.title}</strong></CardTitle>
-                                <CardText>{course.description_short}<br/>Price: {parseFloat(course.price).toFixed(2)} €<br/>Course begins: {moment(course.date).format('DD.MM.YYYY')}</CardText>
-                                <Button className="submit-btn" onClick={()=> {registrationRequestHandler(course)}}>Register</Button>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                )}
-                </CardDeck>
+                    <CardDeck>
+                    {courses.map(course => 
+                        <Col sm="4" key={course._id}>
+                            <Card className="card">
+                                <Link to={`/courses/${course.id}`}> 
+                                    <CardImg top width="100%" id="card-img" src={course.thumbnail_url} alt="Card image cap" onClick={()=> {courseSelectionHandler(course)}}/>
+                                </Link>
+                                <CardBody>
+                                    <CardTitle><strong>{course.title}</strong></CardTitle>
+                                    <CardText>{course.description_short}<br/>Price: {parseFloat(course.price).toFixed(2)} €<br/>Course begins: {moment(course.date).format('DD.MM.YYYY')}</CardText>
+                                    <Button className="submit-btn" onClick={()=> {registrationRequestHandler(course)}}>Register</Button>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                    )}
+                    </CardDeck>
                 </Row>
-        
+                
             </>
         )
     }else{
@@ -170,3 +170,27 @@ const CoursesPage = ({history}) => {
 }
 
 export default CoursesPage
+
+/**
+ * <Row>
+                <CardDeck>
+                {courses.map(course => 
+                    <Col sm="4" key={course._id}>
+                        <Card className="card">
+                            <Link to={`/courses/${course.id}`}> 
+                                <CardImg top width="100%" id="card-img" src={course.thumbnail_url} alt="Card image cap" onClick={()=> {courseSelectionHandler(course)}}/>
+                            </Link>
+                            <CardBody>
+                                <CardTitle><strong>{course.title}</strong></CardTitle>
+                                <CardText>{course.description_short}<br/>Price: {parseFloat(course.price).toFixed(2)} €<br/>Course begins: {moment(course.date).format('DD.MM.YYYY')}</CardText>
+                                
+                            </CardBody>
+                            <CardFooter>
+                                <Button className="submit-btn" onClick={()=> {registrationRequestHandler(course)}}>Register</Button>
+                            </CardFooter>
+                        </Card>
+                    </Col>
+                )}
+                </CardDeck>
+                </Row>
+ */

@@ -28,24 +28,7 @@ export default function MyCourses() {
         window.alert("This is not implemented")
     }
 
-    const deleteHandler = async (registrationId) =>{
-        try {
-            await api.delete(`/registration/${registrationId}`)
-            setSuccess(true)
-            setMessageHandler('Registration deleted successfully')
-            setTimeout(() => {
-                setSuccess(false)
-                setMessageHandler('')
-            }, 2000);
-        } catch(error) {
-            setError(true)
-            setMessageHandler('Error deleting registration!')
-            setTimeout(() => {
-                setError(false)
-                setMessageHandler('')
-            }, 2000);
-        }
-    }
+    
     
     return (
         <>
@@ -56,7 +39,6 @@ export default function MyCourses() {
                     <tr>
                     <td><strong>{course.courseTitle}</strong></td>
                     <td><span> Course Price: {parseFloat(course.coursePrice).toFixed(2)} €</span></td>
-                    <td><Button onClick={()=> {deleteHandler(course._id)}}>Delete</Button></td>
                     </tr>
                 </tbody>
                 

@@ -19,3 +19,8 @@ a:link {
     padding: 1em;
 }
 
+.alert{
+    z-index: 1;
+   
+}
+
