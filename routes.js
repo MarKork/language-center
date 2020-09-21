@@ -38,11 +38,11 @@ routes.post('/course', uploadToS3.single("thumbnail") ,CourseController.createCo
 routes.delete('/course/:courseId', CourseController.delete)
 
 // Dashboard
-// Getting all events
+// Getting all courses
 routes.get('/dashboard', DashboardController.getCourses)
-// Getting events by category
+// Getting courses by language
 routes.get('/dashboard/:language', DashboardController.getCourses)
-// Getting events with ID using function called getEventById from EventController
+// Getting courses with ID 
 routes.get('/course/:courseId', DashboardController.getCourseById)
 
 // Login
