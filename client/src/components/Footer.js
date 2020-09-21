@@ -12,7 +12,7 @@ const Footer = () => {
             <div className="col-2">
               <h4 id="our-name">Language <br/>Center</h4>
             </div>
-            <div className="col-2">
+            <div className="col-2" id="about">
               <h4>About Us</h4>
               <p>Our story</p>
               <p>News</p>
