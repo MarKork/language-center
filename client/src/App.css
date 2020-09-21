@@ -145,6 +145,10 @@ footer{
     font-size: 0.7rem;
 }
 
+.col-2{
+    padding-left: 0px;
+}
+
 a{
     color: rgb(146, 144, 144);
 }
@@ -177,5 +181,21 @@ a{
   .navbar-light .navbar-nav .nav-link{
       color: #0A0A0A;
   }
+
+  @media only screen and (max-width: 767px){
+    #our-name{
+        font-size: 0.9em;
+        padding-top: 0.5em;
+        padding-right: 0.5em;
+    }
+    .col-1{
+        max-width: 1%;
+        padding: 0px;
+    }
+    .col-2{
+        max-width: 20%;
+        width: 20%;
+    }
+}
   
   

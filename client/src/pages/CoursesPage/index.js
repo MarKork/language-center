@@ -21,7 +21,6 @@ const CoursesPage = ({history}) => {
     }, [location])
 
     const getCourses = async() => {
-        console.log("getCoursesissa ", location)
         setSelected(null)
         setLanguageName(null)
         const currentPath = location.pathname;
@@ -32,20 +31,18 @@ const CoursesPage = ({history}) => {
             setLanguageName(newName) 
             language=newName  
         }
-        console.log("language on ", language)
+        
         if(currentPath.length>25){
             let course_id=currentPath.slice(9)
             const url =  `/course/${course_id}` 
             const response = await api.get(url)
             setSelected(response.data)
-            console.log("ifissä response.data on ",response.data)
         }
         
         try {
             const url = language? `/dashboard/${language}` : '/dashboard'
             const response = await api.get(url)
             setCourses(response.data)
-            console.log("tryssä response.data on ", response.data)
         } catch (error){
             setError(true)
             setMessageHandler(`Could not found courses`)
