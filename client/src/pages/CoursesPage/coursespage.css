@@ -24,3 +24,18 @@ a:link {
    
 }
 
+@media only screen and (max-width: 767px){
+    #one_course{
+        display: block;
+    }
+    #img{
+        min-height: 100px;
+        max-height: 400px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+    }
+}
+

@@ -146,7 +146,7 @@ const CoursesPage = ({history}) => {
         return(
             <>
                 <div id="one_course">
-                    <img src={selected.thumbnail_url} alt="thumbnail"></img>
+                    <img src={selected.thumbnail_url} alt="thumbnail" id="img"></img>
                     <div id="course_info">
                         <h2>{selected.title}</h2>
                         <p>{selected.description_long}</p>
