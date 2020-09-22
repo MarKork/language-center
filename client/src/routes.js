@@ -79,5 +79,6 @@ export default Routes => {
         <Footer />
         
       </BrowserRouter>
+      
     )
 }
