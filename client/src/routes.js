@@ -33,7 +33,7 @@ export default Routes => {
             <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
               <NavItem>
-                <Link to="/courses">all courses</Link>
+                <Link to="/courses">All courses</Link>
               </NavItem>
               <NavItem>
                 <Link to="/courses/Italian">Italian</Link>
@@ -50,7 +50,7 @@ export default Routes => {
                 </NavItem>
               :
                 <NavItem>
-                  <Link to="/login">login</Link>
+                  <Link to="/login">Login</Link>
                 </NavItem>
               }
               {isLoggedIn? 
@@ -59,7 +59,7 @@ export default Routes => {
                 </NavItem>
               :
                 <NavItem>
-                  <Link to="/register">register</Link>
+                  <Link to="/register">Register</Link>
                 </NavItem>
               }
             </Nav>
